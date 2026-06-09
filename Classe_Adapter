@@ -1,0 +1,15 @@
+class EuropeanSocket:
+    def voltage(self):
+        return "220V"
+
+class Adapter:
+    def __init__(self, socket):
+        self.socket = socket
+
+    def voltage(self):
+        return f"Adapted {self.socket.voltage()} to 110V"
+
+eu_socket = EuropeanSocket()
+adapter = Adapter(eu_socket)
+
+print(adapter.voltage())  # Adapted 220V to 110V
